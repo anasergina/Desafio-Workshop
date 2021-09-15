@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Desafio Workshop</title>
+    <style>
+    table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr {
+  border-bottom: 1px solid #ddd;
+}
+    </style>
+    <style>
+#main {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  display: flex;
+}
+
+#main div {
+  -ms-flex: 1;  /* IE 10 */  
+  flex: 1;
+}
+</style>
+</head>
+<body>
+
+<h1>Display</h1>
+<div class="flex-container">
+  <div class="flex-item-left">
+    <img src="mar.jpg" width="960px">
+  </div>
+  <div class="flex-item-right">
+    <p>Ao esperar o melhor, você cria uma expectativa positiva que detona o processo de vitória. Ser otimista é ser perseverante, é ter uma fé inabalável e uma certeza sem limites de que tudo vai dar certo. ... Seja incansavelmente otimista. Faz bem para o corpo, para a mente e para a alma.</p>
+  </div>
+</div>
+<style>
+ * {
+  box-sizing: border-box;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 30px;
+  text-align: center;
+}
+
+.flex-item-left {
+  background-color: #f1f1f1;
+  padding: 10px;
+  flex: 100%;
+}
+
+.flex-item-right {
+  background-color: dodgerblue;
+  padding: 10px;
+  flex: 100%;
+}
+
+/*Layout */
+@media (max-width: 960px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+    fetch("https://api.randomuser.me/?results=10").then(function(response) {
+      return response.json();
+    }).then(function(data) {
+      console.log(data);
+      document.getElementById('l1').innerHTML = data.results[0].name.first;
+      document.getElementById('l2').innerHTML = data.results[1].name.first;
+      document.getElementById('l3').innerHTML = data.results[2].name.first;
+      document.getElementById('l4').innerHTML = data.results[3].name.first;
+      document.getElementById('l5').innerHTML = data.results[4].name.first;
+      document.getElementById('l6').innerHTML = data.results[5].name.first;
+      document.getElementById('l7').innerHTML = data.results[6].name.first;
+      document.getElementById('l8').innerHTML = data.results[7].name.first;
+      document.getElementById('l9').innerHTML = data.results[8].name.first;
+
+
+    }).catch(function() {
+      console.log("Erro");
+    });
+
+
+    
+    </script>
+    <header>
+      <h2>Lista de Usuários</h2>
+    </header>
+    <table>
+
+      <tr>
+         <th>Nomes</th>
+      </tr>
+      <tr>
+         <td id="l1"></td>
+      </tr>
+      <tr>
+        <td id="l2"></td>
+     </tr>
+     <tr>
+      <td id="l3"></td>
+   </tr>
+   <tr>
+    <td id="l4"></td>
+ </tr>
+ <tr>
+  <td id="l5"></td>
+</tr>
+<tr>
+  <td id="l6"></td>
+</tr>
+<tr>
+  <td id="l7"></td>
+</tr>
+<tr>
+  <td id="l8"></td>
+</tr>
+<tr>
+  <td id="l9"></td>
+</tr>
+    </table>
+
+    <section>
+      
+      <button type="button" button value="Refresh Page" onClick="history.go(0)">Atualizar página</button>
+    </section>
+  </body>
+</html>
